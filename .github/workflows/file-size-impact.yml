@@ -8,11 +8,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [13.12.0]
-    runs-on:
-    - self-hosted
-    - tower
-    - ${{ matrix.os }}
-    - tower-run-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: ["self-hosted", "${{ matrix.os }}"]
     name: report file size impact
     steps:
     - name: Setup git
